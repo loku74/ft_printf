@@ -24,8 +24,11 @@ HEADER = ft_printf.h
 
 SRCS = ft_printf.c\
 	   ft_treat_char.c\
-	   ft_treat_string.c\
-	   ft_treat_ptr.c
+	   ft_treat_str.c\
+	   ft_treat_ptr.c\
+	   ft_treat_int.c\
+	   ft_treat_uint.c\
+	   ft_treat_hexa.c
 
 #Directories
 
@@ -38,8 +41,12 @@ INCLUDES = -I$(HEADER_FILES)
 #Files
 
 SRCS_FILES = $(addprefix $(SRCS_DIR), $(SRCS))
-
 OBJS_FILES = $(SRCS_FILES:.c=.o)
+
+# Rules
+
+%.o: %.c $(HEADER_FILES) libft/libft.h Makefile libft/Makefile
+	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
 all: $(NAME)
 
@@ -50,13 +57,13 @@ $(NAME): $(OBJS_FILES)
 	$(AR) $(AR_FLAGS) $(NAME) $(OBJS_FILES)
 	ranlib $(NAME)
 
-%.o: %.c $(HEADER_FILES) Makefile
-	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
 clean:
+	make clean -C $(LIBFT_DIR)
 	$(RM) $(RM_FLAGS) $(OBJS_FILES)
 
 fclean: clean
+	make fclean -C $(LIBFT_DIR)
 	$(RM) $(RM_FLAGS) $(NAME)
 
 re: fclean all

@@ -15,7 +15,7 @@
 static void	ft_put_hexa(unsigned long num, int *size)
 {
 
-	if (num > 16)
+	if (num >= 16)
 	{
 		ft_put_hexa(num / 16, size);
 		ft_put_hexa(num % 16, size);
@@ -41,7 +41,7 @@ int	ft_treat_ptr(void *ptr)
 	if (!ptr)
 	{
 		ft_putstr_fd("0x0", 1);
-		return (size + 3);
+		return (size + 1);
 	}
 	res = (unsigned long)ptr;
 	ft_putstr_fd("0x", 1);

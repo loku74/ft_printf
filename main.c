@@ -3,17 +3,13 @@
 
 int main()
 {
-	int	k;
+	int	int_max;
+	int	int_min;
 
-	char f[5] = "fuck";
-	ft_printf("%s\n%c\n", f, 'c');
-	k = ft_printf("%p test allo oui mdr lol", f);
-	printf(" | %d\n", k);
-	k = printf("%p test allo oui mdr lol", f);
-	printf(" | %d\n", k);
-	ft_printf("%p\n", NULL);
-	printf("%p\n", NULL);
-	k = printf("");
-	printf("%d", k);
+	int_max = 2147483647;
+	int_min = -2147483648;
+	printf("%x\n", int_max * 2);
+	printf("%x\n", int_min);
+	printf("%x\n", -12);
 	return (0);
 }
