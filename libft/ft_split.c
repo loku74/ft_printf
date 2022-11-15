@@ -55,8 +55,12 @@ static unsigned int	count_words(char const *str, char c)
 		if (str[i] != c)
 		{
 			count++;
-			while (str[i] != c)
+			while (i < len_str)
+			{
+				if (str[i] == c)
+					break;
 				i++;
+			}
 		}
 		i++;
 	}
