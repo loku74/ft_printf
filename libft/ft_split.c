@@ -57,7 +57,7 @@ static int	count_words(char const *str, char c)
 	return (count);
 }
 
-static char	**ft_gosplit(char **tab, char const *s, char c)
+static char	**ft_strsplit(char **tab, char const *s, char c)
 {
 	size_t	i;
 	size_t	j;
@@ -92,5 +92,5 @@ char	**ft_split(char const *s, char c)
 	tab = (char **)malloc(sizeof(char *) * ((count_words(s, c) + 1)));
 	if (!tab)
 		return (NULL);
-	return (ft_gosplit(tab, s, c));
+	return (ft_strsplit(tab, s, c));
 }
