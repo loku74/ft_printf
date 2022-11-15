@@ -37,21 +37,27 @@ static size_t	next_c(const char *str, char c)
 	return (i);
 }
 
-static int	count_words(char const *str, char c)
+static unsigned int	count_words(char const *str, char c)
 {
 	size_t			i;
+	size_t			len_str;
 	unsigned int	count;
 
+	len_str = ft_strlen(str);
 	count = 1;
 	i = 0;
 	while (str[i] == c)
 		i++;
-	if (i == ft_strlen(str))
+	if (i == len_str)
 		return (count);
-	while (str[i + 1])
+	while (i < len_str)
 	{
-		if (str[i] == c && str[i + 1] != c)
+		if (str[i] != c)
+		{
 			count++;
+			while (str[i] != c)
+				i++;
+		}
 		i++;
 	}
 	return (count);
@@ -89,7 +95,7 @@ char	**ft_split(char const *s, char c)
 
 	if (!s)
 		return (NULL);
-	tab = (char **)malloc(sizeof(char *) * ((count_words(s, c) + 1)));
+	tab = (char **)malloc(sizeof(char *) * ((count_words(s, c))));
 	if (!tab)
 		return (NULL);
 	return (ft_strsplit(tab, s, c));
