@@ -6,7 +6,7 @@
 /*   By: lbourniq <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 09:26:08 by lbourniq          #+#    #+#             */
-/*   Updated: 2022/11/11 14:56:06 by lbourniq         ###   ########lyon.fr   */
+/*   Updated: 2022/11/17 10:14:50 by lbourniq         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,25 +40,23 @@ static size_t	next_c(const char *str, char c)
 static unsigned int	count_words(char const *str, char c)
 {
 	size_t			i;
-	size_t			len_str;
 	unsigned int	count;
 
-	len_str = ft_strlen(str);
 	count = 1;
 	i = 0;
 	while (str[i] == c)
 		i++;
-	if (i == len_str)
+	if (i == ft_strlen(str))
 		return (count);
-	while (i < len_str)
+	while (i < ft_strlen(str))
 	{
 		if (str[i] != c)
 		{
 			count++;
-			while (i < len_str)
+			while (i < ft_strlen(str))
 			{
 				if (str[i] == c)
-					break;
+					break ;
 				i++;
 			}
 		}

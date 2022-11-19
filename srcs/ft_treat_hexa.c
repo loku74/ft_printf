@@ -1,8 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_treat_hexa.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lbourniq <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/17 11:02:14 by lbourniq          #+#    #+#             */
+/*   Updated: 2022/11/17 11:02:22 by lbourniq         ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/ft_printf.h"
 
 static void	ft_put_hexa(unsigned int num, int *size, int format)
 {
-
 	if (num >= 16)
 	{
 		ft_put_hexa(num / 16, size, format);

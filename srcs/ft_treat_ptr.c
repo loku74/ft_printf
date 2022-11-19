@@ -6,7 +6,7 @@
 /*   By: lbourniq <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 16:10:37 by lbourniq          #+#    #+#             */
-/*   Updated: 2022/11/13 16:43:20 by lbourniq         ###   ########lyon.fr   */
+/*   Updated: 2022/11/17 11:02:51 by lbourniq         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 static void	ft_put_hexa(unsigned long num, int *size)
 {
-
 	if (num >= 16)
 	{
 		ft_put_hexa(num / 16, size);
