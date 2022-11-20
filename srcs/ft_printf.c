@@ -6,7 +6,7 @@
 /*   By: lbourniq <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 16:36:57 by lbourniq          #+#    #+#             */
-/*   Updated: 2022/11/19 14:13:03 by lbourniq         ###   ########lyon.fr   */
+/*   Updated: 2022/11/20 12:07:13 by lbourniq         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,10 @@ int	ft_printf(const char *input, ...)
 	i = -1;
 	output_length = 0;
 	if (write(1, 0, 0) != 0)
-		return (-1);
+		return (va_end(args), -1);
 	if (!ft_strlen(input))
-		return (0);
-	while (++i < (int)ft_strlen(input) - 1)
+		return (va_end(args), 0);
+	while (++i < (int)ft_strlen(input))
 	{
 		if (input[i] == '%')
 			output_length += ft_func(input[++i], &args);
@@ -54,8 +54,5 @@ int	ft_printf(const char *input, ...)
 			output_length++;
 		}
 	}
-	if (i == (int)ft_strlen(input))
-		return (output_length);
-	ft_putchar_fd(input[i], 1);
-	return (va_end(args), output_length + 1);
+	return (va_end(args), output_length);
 }

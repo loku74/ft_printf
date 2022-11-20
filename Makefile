@@ -6,7 +6,7 @@
 #    By: lbourniq <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/11 15:12:28 by lbourniq          #+#    #+#              #
-#    Updated: 2022/11/13 16:20:15 by lbourniq         ###   ########lyon.fr    #
+#    Updated: 2022/11/20 09:29:52 by lbourniq         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -63,8 +63,8 @@ clean:
 	$(RM) $(RM_FLAGS) $(OBJS_FILES)
 
 fclean: clean
-	make fclean -C $(LIBFT_DIR)
 	$(RM) $(RM_FLAGS) $(NAME)
+	$(RM) $(RM_FLAGS) libft/$(LIBFTNAME)
 
 re: fclean all
 

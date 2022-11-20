@@ -6,15 +6,15 @@
 /*   By: lbourniq <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 09:26:08 by lbourniq          #+#    #+#             */
-/*   Updated: 2022/11/17 10:14:50 by lbourniq         ###   ########lyon.fr   */
+/*   Updated: 2022/11/17 14:02:45 by lbourniq         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	*free_all(char **tab, unsigned int nelem)
+static void	*free_all(char **tab, size_t nelem)
 {
-	unsigned int	i;
+	size_t	i;
 
 	i = 0;
 	while (i < nelem)
@@ -79,7 +79,7 @@ static char	**ft_strsplit(char **tab, char const *s, char c)
 		{
 			tab[j] = (char *)malloc(sizeof(char) * (next_c(&s[i], c) + 1));
 			if (!tab[j])
-				return (free_all(tab, count_words(s, c) + 1));
+				return (free_all(tab, j));
 			k = 0;
 			while (next_c(&s[i], c))
 				tab[j][k++] = s[i++];

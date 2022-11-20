@@ -6,7 +6,7 @@
 /*   By: lbourniq <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 13:34:13 by lbourniq          #+#    #+#             */
-/*   Updated: 2022/11/09 10:18:30 by lbourniq         ###   ########lyon.fr   */
+/*   Updated: 2022/11/18 13:53:33 by lbourniq         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strdup(const char *str)
 	if (!ret)
 		return (NULL);
 	i = 0;
-	while (str[i])
+	while (str && str[i])
 	{
 		ret[i] = str[i];
 		i++;
