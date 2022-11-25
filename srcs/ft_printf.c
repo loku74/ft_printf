@@ -28,7 +28,12 @@ int	ft_func(char c, va_list *args)
 		return (ft_treat_hexa(va_arg(*args, unsigned int), c));
 	else if (c == '%')
 		ft_putchar_fd('%', 1);
-	return (1);
+	if (c)
+	{
+		ft_putchar_fd(c, 1);
+		return (1);
+	}
+	return (0);
 }
 
 int	ft_printf(const char *input, ...)
